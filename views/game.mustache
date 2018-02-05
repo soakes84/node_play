@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Time</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="game-body">
+    <header id="header">
+      <h1>Welcome, {{player.name}}</h1>
+    </header>
+    <main>
+     <h2>Please Guess A Letter Below</h2>
+      <br>
+      <h1 id="hidden-word">{{player.hiddenWord}}</h1>
+      {{^player.end}}
+      <form action="/game" method="POST">
+        <label for="letter">Guess A Letter: </label>
+        <input name="letter" type="text"/>
+        <button type="submit" name="guess-button">Guess!</button>
+      </form>
+      {{/player.end}}
+      <h2>You have <span>{{player.numGuesses}}</span> attempts left.</h2>
+      <h2>Letters Guessed So Far:
+        {{#player.letters}}
+        <span>{{.}} </span>
+        {{/player.letters}}
+      </h2>
+      <h1>{{message}}</h1>
+      {{#player.end}}
+      <h1>Your Word: {{player.word}}</h1>
+      {{/player.end}}
+    </main>
+  </body>
+</html>

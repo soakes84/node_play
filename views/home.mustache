@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Time</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="home-body">
+    <header id="header">
+      <h1>Ready to play?</h1>
+    </header>
+    <main>
+      <form action="/home" method="POST">
+        <label for="level">Time to find out how smart you are. Please pick a level:</label>
+        <br>
+        <select name="level">
+          <option value="easy">Easy- Shorter Words</option>
+          <option value="normal" selected>Normal- Medium Words</option>
+          <option value="hard">Hard- Longer Words</option>
+        </select>
+        <br>
+        <input type="text" name="name" placeholder="Your name please"/>
+        <button type="submit" name="start-button">Play</button>
+      </form>
+    </main>
+  </body>
+</html>
